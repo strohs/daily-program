@@ -39,7 +39,7 @@
     (iterate #(step-sugar % range) g)))
 
 (defn print-grid [g]
-  (doseq [s (map #(apply str (replace {0 "." 1 "⚫"} %)) g)]
+  (doseq [s (map #(apply str (replace {0 "." 1 "*"} %)) g)]
     (println s)))
 
 
