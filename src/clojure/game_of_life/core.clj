@@ -1,6 +1,8 @@
 (ns game-of-life.core
   (:gen-class))
 
+;simulation of conway's game of life
+
 (def grid [[0 0 0]
            [1 1 1]
            [0 0 0]])
