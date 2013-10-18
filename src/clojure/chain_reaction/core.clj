@@ -9,6 +9,8 @@
                 :D {:x 3 :y 2 :r 3 :d "udlr" :reacted? false}
                   })
 
+(def dir->fn { :u up? :d down? :l left? :r right? })
+
 (defn empty-matrix [n]
   (vec (repeatedly n #(vec (repeat n " ")))))
 
@@ -81,8 +83,6 @@
       true
       false)))
 
-;map from direction keywords to direction functions
-(def dir->fn { :u up? :d down? :l left? :r right? })
 ;concat c1 c2 &c
 ;(group-by #(up? e1 %) @data)
 ;(.contains str1 str2)
