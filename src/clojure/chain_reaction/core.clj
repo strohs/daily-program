@@ -118,3 +118,5 @@
             new-elements (dissoc reacted-elements ekey)]
         (recur (merge elements reacted-elements) (ffirst new-elements) new-elements)))))
 
+(defn p75? []
+  (<= (rand-int 100) 74))

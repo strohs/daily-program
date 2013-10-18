@@ -17,7 +17,7 @@
     <orderEntry type="library" name="Leiningen: org.clojure:math.combinatorics:0.0.3" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure:math.numeric-tower:0.0.2" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure:tools.nrepl:0.2.3" level="project" />
-    <orderEntry type="library" name="Leiningen: org.clojure:tools.trace:0.7.5" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure:tools.trace:0.7.6" level="project" />
     <orderEntry type="library" name="Leiningen: joda-time:joda-time:2.1" level="project" />
   </component>
 </module>

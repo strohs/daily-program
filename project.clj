@@ -8,7 +8,7 @@
   :javac-options     ["-target" "1.7" "-source" "1.7"]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [clj-time "0.4.4"]
-                 [org.clojure/tools.trace "0.7.5"]
+                 [org.clojure/tools.trace "0.7.6"]
                  [org.clojure/math.combinatorics "0.0.3"]
                  [org.clojure/math.numeric-tower "0.0.2"]]
-  :main game-of-life.core)
+  :main percent-return.core)
