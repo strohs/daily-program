@@ -36,6 +36,19 @@
            (= 3 (count root))
            (every? istree? (rest root)))))
 
+;#100 Least Common Multiple
+(defn lcm [a b & more]
+  ; gcd (Greatest Common Divisor) function assumes a and b are positive numbers
+  (letfn [(gcd [a b]
+               (if (= a b)
+                   a
+                   (if (> a b)
+                     (gcd (- a b) b)
+                     (gcd (- b a) a))))]
+    (reduce #(/ (* %1 %2) (gcd %1 %2)) (conj more b a))))
+
+
+
 ;#118
 (fn mmap [f coll]
   (lazy-seq

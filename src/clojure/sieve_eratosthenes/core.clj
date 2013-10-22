@@ -21,3 +21,15 @@
 ;; brute force prime number test
 (defn bf-prime? [n]
   (not-any? zero? (map #(rem n %) (range 2 n))))
+
+(defn to-matrix [size]
+  (for [cols (range 0 size)
+        rows (range 0 size)
+        :let [prod (if (prime? (* rows cols))
+                     (* rows cols)
+                     0)]]
+    prod))
+
+(partition 10 (to-matrix 10))
+(doseq [coll (partition 10 (to-matrix 10))]
+  (println coll))
