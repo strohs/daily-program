@@ -36,6 +36,22 @@
            (= 3 (count root))
            (every? istree? (rest root)))))
 
+;;#96 Beauty is Symmetry
+(defn symmetric-tree? [[root left right]]
+  (letfn [(terminal? [node]
+                     (not (sequential? node)))]
+    (if (and (terminal? left) (terminal? right))
+      (= left right)
+      (if (and (sequential? left) (sequential? right))
+        (and (= (first left) (first right)) (symmetric-tree? left) (symmetric-tree? right))
+        false))))
+
+;another solution
+#(= % ((fn flip [[v l r :as n]]
+         (when n
+           [v (flip r) (flip l)])) %))
+
+
 ;#100 Least Common Multiple
 (defn lcm [a b & more]
   ; gcd (Greatest Common Divisor) function assumes a and b are positive numbers
@@ -97,6 +113,5 @@
 
 ;#156 map defaults
 (fn map-def [default coll] (into {} (map #(vector % default) coll)))(reverse [2 5 4 1 3 6])
-
 
 
