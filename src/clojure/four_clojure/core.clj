@@ -38,13 +38,14 @@
 
 ;;#96 Beauty is Symmetry
 (defn symmetric-tree? [[root left right]]
-  (letfn [(terminal? [node]
-                     (not (sequential? node)))]
-    (if (and (terminal? left) (terminal? right))
-      (= left right)
-      (if (and (sequential? left) (sequential? right))
-        (and (= (first left) (first right)) (symmetric-tree? left) (symmetric-tree? right))
-        false))))
+  (letfn [(terminal? [node] (not (sequential? node)))
+          (mirror? [l r]
+                   (if (and (terminal? l) (terminal? r))
+                     (= l r)
+                     (if (and (sequential? l) (sequential? r))
+                       (and (= (nth l 0) (nth r 0)) (mirror? (nth l 1) (nth r 2)) (mirror? (nth l 2) (nth r 1)))
+                       false)))]
+    (mirror? left right)))
 
 ;another solution
 #(= % ((fn flip [[v l r :as n]]
