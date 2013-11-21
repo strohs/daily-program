@@ -116,3 +116,11 @@
 (fn map-def [default coll] (into {} (map #(vector % default) coll)))(reverse [2 5 4 1 3 6])
 
 
+(def ^:dynamic *response-code* nil)
+(defn http-get
+  [url-string]
+  (let [conn (-> url-string java.net.URL. .openConnection)
+        response-code (.getResponseCode conn)]
+    (when (thread-bound? #'*response-code*)
+      (set! *response-code* response-code))
+    (when (not= 404 response-code) (-> conn .getInputStream slurp))))
