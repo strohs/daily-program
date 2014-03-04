@@ -1,6 +1,9 @@
 (ns barbershop.core)
 
+;; number of seats in the shop
 (def empty-seats (ref 3))
+
+;; barber keeps track of number of hair-cuts given
 (def barber (agent 0))
 
 (defn debug [msg n]
