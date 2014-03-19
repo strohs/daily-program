@@ -10,6 +10,13 @@
                  [org.clojure/core.async "0.1.267.0-0d7780-alpha"]
                  [clj-time "0.4.4"]
                  [org.clojure/tools.trace "0.7.6"]
-                 [org.clojure/math.combinatorics "0.0.3"]
-                 [org.clojure/math.numeric-tower "0.0.2"]]
-  :main barbershop.core)
+                 [org.clojure/math.combinatorics "0.0.7"]
+                 [org.clojure/math.numeric-tower "0.0.2"]
+                 [io.aviso/pretty "0.1.10"]]
+  ;:global-vars {*warn-on-reflection* true}
+
+  :repl-options {
+                  :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
+                }
+
+  :main disemvowler.emvowler )
