@@ -10,16 +10,16 @@ public class Bst {
 
     Node root = null;
 
-    public Node insert( int i ) {
+    public Node insert( Integer i ) {
         root = rinsert( i, root );
         return root;
     }
 
-    private Node rinsert( int i, Node n ) {
+    private Node rinsert( Integer i, Node n ) {
         if ( n == null ) {
             return new Node( i, null, null );
         }
-        else if ( i <= n.value ) {
+        else if ( n.value.compareTo( i ) > 0 ) {
             n.left = rinsert( i , n.left );
         } else {
             n.right = rinsert( i, n.right );

@@ -1,5 +1,7 @@
 (ns barbershop.core)
 
+;;;; Sleeping barber problem
+
 ;; number of seats in the shop
 (def empty-seats (ref 3))
 
@@ -35,3 +37,4 @@
 
   (Thread/sleep 2000)
   (println "(!) " @barber "customers got haircuts today"))
+
