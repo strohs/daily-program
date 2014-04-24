@@ -20,4 +20,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main torn-number.core )
+  :main ascii-architect.core )
