@@ -20,4 +20,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main ascii-architect.core )
+  :main troubled-triangles.core )
