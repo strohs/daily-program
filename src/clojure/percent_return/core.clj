@@ -2,7 +2,7 @@
   (:use [clojure.tools.trace])
   (:gen-class))
 
-(def buy-price 118.75)
+(def buy-price 19.60)
 
 (defn percent-return [ buy strike bid ]
   (* (/ (+ (- strike buy) bid) buy ) 100))
