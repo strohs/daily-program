@@ -20,4 +20,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main troubled-triangles.core )
+  :main damage-control.core )
