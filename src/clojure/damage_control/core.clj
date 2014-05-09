@@ -4,24 +4,23 @@
 
 ;;; :B = regular building
 ;;; :* = destroyed building
-;;; :T = termite infested buildind
 
-(def b [:B :B :B :B :B :B :B :B :B :B :B :B :B :B :B :B :B :B :B :B])
+(def b [:B :B :B :B :B :B :B :B])
 (def d [13 5 2])
 
 (defn build [n]
   (vec (repeat n :B)))
 
-(defn destroy [v index]
+(defn destroy [index v]
   (assoc v index :*))
 
 (defn destroyed-indexes [v]
   (keep-indexed #(if (= %2 :*) %1) v))
 
-(defn count-right [v index]
+(defn count-right [index v]
   (count (take-while #(not= :* %) (rest (second (split-at index v))))))
 
-(defn count-left [v index]
+(defn count-left [index v]
   (count (take-while #(not= :* %) (reverse (first (split-at index v))))))
 
 (defn compute
