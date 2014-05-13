@@ -43,11 +43,11 @@ public class Deck {
         return cards;
     }
 
-    //deal n cards from the deck
+    //deal n cards from the deck, if n cards are not available, returns an empty list
     public List<Card> deal( int n ) {
-        if ( n < 0 ) throw new IllegalArgumentException( "n must be > 0 " );
         List<Card> hand = new ArrayList<>();
         int count = 0;
+        if ( n > this.size() ) return hand;
 
         while ( !cards.isEmpty() && count < n ) {
             hand.add( cards.remove( 0 ) );

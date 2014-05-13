@@ -20,4 +20,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main damage-control.core )
+  :main blackjack.core )
