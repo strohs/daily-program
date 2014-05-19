@@ -20,4 +20,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main blackjack.core )
+  :main novel-compression.decompressor )
