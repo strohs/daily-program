@@ -28,7 +28,7 @@
 (defn append-str [coll s] (into (vec coll) s))
 
 (defn chunk->chars
-  "looks up chunk in the dictionary and adds it to the coll. returns coll as a seq of chars"
+  "looks up chunk in the dictionary, gets the word, and adds it to the coll. returns coll as a seq of chars"
   [coll chunk]
   (cond
     (chunk-number? chunk) (append-str coll (str (get dictionary (parse-int chunk)) " "))

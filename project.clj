@@ -8,6 +8,7 @@
   :javac-options     ["-target" "1.7" "-source" "1.7"]
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
+                 [org.clojure/core.match "0.2.1"]
                  [cheshire "5.2.0"]
                  [clj-time "0.4.4"]
                  [org.clojure/tools.trace "0.7.6"]
@@ -20,4 +21,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main novel-compression.decompressor )
+  :main novel-compression.compressor )
