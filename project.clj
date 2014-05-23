@@ -21,4 +21,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main novel-compression.compressor )
+  :main easy-probability.core )
