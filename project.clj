@@ -21,4 +21,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main easy-probability.core )
+  :main string-index.core )
