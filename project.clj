@@ -21,4 +21,4 @@
                   :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
                 }
 
-  :main string-index.core )
+  :main blackjack-checker.core )
