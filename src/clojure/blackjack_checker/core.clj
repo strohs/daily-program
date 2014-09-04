@@ -8,7 +8,9 @@
    "Bob: Three of Hearts, Six of Spades, Seven of Spades"])
 
 
-(defn map-card [card]
+(defn map-card
+  "map an card string i.e.'Ten of Clubs' to a map containing its rank and suit"
+  [card]
   (let [[rank suit] (str/split card #" of ")]
     {:rank (keyword rank) :suit (keyword suit) :value (get rank->val (keyword rank))}))
 

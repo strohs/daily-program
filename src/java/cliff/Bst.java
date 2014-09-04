@@ -17,7 +17,7 @@ public class Bst {
 
     private Node rinsert( Integer i, Node n ) {
         if ( n == null ) {
-            return new Node( i, null, null );
+            return new Node<>( i, null, null );
         }
         else if ( n.value.compareTo( i ) > 0 ) {
             n.left = rinsert( i , n.left );
