@@ -1,20 +1,17 @@
 # daily-program
 
-FIXME: description
+A repository of my attempts to solve programming challenges, from Reddit /r/dailyprogrammer, using clojure
 
 ## Installation
 
-Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
 
-    $ java -jar daily-program-0.1.0-standalone.jar [args]
 
 ## Options
 
-FIXME: listing of options this app accepts.
+
 
 ## Examples
 

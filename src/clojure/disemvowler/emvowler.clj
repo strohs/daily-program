@@ -1,16 +1,14 @@
 (ns disemvowler.emvowler
   (:require [clojure.math.combinatorics :as combo]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [disemvowler.trie :as trie]))
 
-;; combine vowels and consonants into one list
-;; generate permutations
-;; filter matching first-lasts
-;; for each resulting permutation:
-;;   generate partitions
-;;   for each partition:
-;;     flatten it and filter out partitions that are in the same order as its parent permutation
-;;     for each filtered partition, take the ones where ALL sub-partitions match a word in the word list
+;; generate trie from word list
+;;
 
+
+(defn build-partitions [coll]
+  (map #(take % coll) (range 1 (inc (count coll)))))
 
 (def word-path "src/clojure/disemvowler/words.txt")
 (defn read-words
@@ -19,6 +17,7 @@
   (with-open [rdr (clojure.java.io/reader path)]
     (reduce conj #{} (line-seq rdr))))
 (def dictionary (read-words word-path))
+
 
 (defn chars->str
   "convert a collection of chars into a string"
