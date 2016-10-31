@@ -1,4 +1,4 @@
-package daily_program.blackjack;
+package java.daily_program.blackjack;
 
 /**
  * Represents a single card with a rank and suit

@@ -1,4 +1,4 @@
-package daily_program.has77;
+package java.daily_program.has77;
 
 /**
  * Given an array of ints, return true if the array contains two 7's next to each other, or there are two 7's

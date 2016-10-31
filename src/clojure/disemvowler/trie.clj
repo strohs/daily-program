@@ -31,4 +31,4 @@
     (\a \b \d \j \o)
     (\a \b \d \t \y)))
 
-(def words ["a" "ad" "add" "adder" "addition"])
+(def words ["a" "ad" "add" "adder" "addition" "abaco" "abbess" "abby" "al" "all" "algo" "also"])

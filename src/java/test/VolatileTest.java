@@ -1,4 +1,4 @@
-package test;
+package java.test;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;

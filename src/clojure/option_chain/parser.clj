@@ -13,7 +13,7 @@
 (defn as-int [s] (if (empty? s) 0 (Integer/parseInt s)))
 
 (defn parse-symbol
-  "parse an option title/symbol into its parts"
+  "parse an option title/symbol string into its parts"
   [symbol]
   (let [[sym ticker exp-date strike type] (re-matches #"(\w+) (\w+) (\d+?.\d*) (\w+)" symbol)]
     {:ticker ticker :exp-date exp-date :strike strike}))
@@ -34,10 +34,12 @@
 (defn percent-return [buy strike bid]
   (* (/ (+ (- strike buy) bid) buy) 100))
 
+(defn print-col-headers []
+  (format "%8s %7s %7s %6s %5s %6s %7s" "TICKER" "EXP-MNTH" "STRIKE" "BID" "ASK" "DAYS" "PCT-RET"))
+
 (defn format-row [row]
   (let [{:keys [ticker exp-date strike bid ask days-left percent-return]} row]
-    ;(format "%s   STRIKE:%3.2f  BID:%3.2f      PR:%3.2f" symbol strike bid percent-return)
-    (format "%7s %7s   %06.2f   %05.2f %05.2f  %3d   %5.2f%%" ticker exp-date strike bid ask days-left percent-return)))
+    (format "%7s %7s    %06.2f   %05.2f %05.2f  %3d   %5.2f%%" ticker exp-date strike bid ask days-left percent-return)))
 
 (defn with-percent-return [data buy]
   (for [row data
@@ -45,8 +47,10 @@
     (assoc-in row [:percent-return] (percent-return buy strike bid))))
 
 (defn parse [path buy ticker]
-  (let [csv (csv/parse-csv (slurp path))
+  (let [ticker (.toUpperCase ticker)
+        csv (csv/parse-csv (slurp path))
         rows (filter #(= ticker (get % :ticker)) (with-percent-return (map #(clean-row %) (rest csv)) buy))]
+    (println (print-col-headers))
     (doseq [row (sort-by :percent-return > rows)]
       (println (format-row row)))))
 

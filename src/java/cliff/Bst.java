@@ -1,4 +1,4 @@
-package cliff;
+package java.cliff;
 
 /**
  * Very simple Binary Search Tree insert algorithm, plus an additional in order print method
@@ -39,13 +39,13 @@ public class Bst {
 
     public static void main( String[] args ) {
         //test case
-        Bst tree = new Bst();
-        printTree( tree.root );
-        tree.insert( 10 );
-        tree.insert( 20 );
-        tree.insert( 5 );
-        tree.insert( 15 );
-        tree.insert( 30 );
-        printTree( tree.root );
+//        Bst tree = new Bst();
+//        printTree( tree.root );
+//        tree.insert( 10 );
+//        tree.insert( 20 );
+//        tree.insert( 5 );
+//        tree.insert( 15 );
+//        tree.insert( 30 );
+//        printTree( tree.root );
     }
 }

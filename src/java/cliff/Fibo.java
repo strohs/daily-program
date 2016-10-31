@@ -1,4 +1,4 @@
-package cliff;
+package java.cliff;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +50,7 @@ public class Fibo {
     }
 
     public static void main( String[] args ) {
-        List<Integer> f = fib(10);
+        List<Integer> f = fib(20);
         f.forEach( System.out::println );
         System.out.println("SHUFFLE TEST:");
         long seed = System.nanoTime();

@@ -1,4 +1,4 @@
-package date_localization;
+package java.date_localization;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
- * User: cliff
+ * User: java.cliff
  * Date: 1/21/13
  * Time: 4:09 PM
  * To change this template use File | Settings | File Templates.

@@ -1,4 +1,4 @@
-package daily_program.blackjack;
+package java.daily_program.blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
