@@ -1,4 +1,4 @@
-package java.daily_program.blackjack;
+package daily_program.blackjack;
 
 import java.util.List;
 

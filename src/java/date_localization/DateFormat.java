@@ -1,4 +1,4 @@
-package java.date_localization;
+package date_localization;
 
 import java.util.Calendar;
 import java.util.HashMap;

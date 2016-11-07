@@ -1,4 +1,4 @@
-package java.daily_program.simplifying_fractions;
+package daily_program.simplifying_fractions;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -24,7 +24,7 @@ import java.util.stream.Stream;
  */
 public class SF {
 
-    public static List<List<Integer>> readAndParse( String path ) {
+    private static List<List<Integer>> readAndParse( String path ) {
         List<List<Integer>> lines = new ArrayList<>(  );
 
         try ( BufferedReader reader = new BufferedReader( new FileReader( path ) ) ) {
@@ -43,13 +43,8 @@ public class SF {
         return lines;
     }
 
-    /**
-     * an iterative method to find the Greatest Common Denominator of two positive Integers: a,b
-     * @param a
-     * @param b
-     * @return
-     */
-    static LongBinaryOperator gcd = (long a, long b) -> {
+
+    private static LongBinaryOperator gcd = (long a, long b) -> {
         long n1;
         long n2;
         long rem;

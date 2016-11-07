@@ -1,4 +1,4 @@
-package java.cliff;
+package cliff;
 
 /**
  * Created with IntelliJ IDEA.

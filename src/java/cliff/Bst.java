@@ -1,4 +1,4 @@
-package java.cliff;
+package cliff;
 
 /**
  * Very simple Binary Search Tree insert algorithm, plus an additional in order print method

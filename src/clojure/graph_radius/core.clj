@@ -1,11 +1,12 @@
-(ns graph-radius.core
+9(ns graph-radius.core
   (:require [clojure.java.io :as io]))
 
-;In graph theory, a graph's radius is the minimum eccentricity of any vertex for a given graph. More simply: it is the
-; minimum distance between all possible pairs of vertices in a graph.
-;As an example, the Petersen graph has a radius of 2 because any vertex is connected to any other vertex within 2 edges.
-;On the other hand, the Butterfly graph has a radius of 1 since its middle vertex can connect to any other vertex
-; within 1 edge, which is the smallest eccentricity of all vertices in this set. Any other vertex has an eccentricity of 2.
+;;In graph theory, a graph's radius is the minimum eccentricity of any vertex for a given graph.
+;; More simply: it is the minimum distance between all possible pairs of vertices in a graph.
+;; As an example, the Petersen graph has a radius of 2 because any vertex is connected to any other vertex
+;; within 2 edges. On the other hand, the Butterfly graph has a radius of 1 since its middle vertex can connect to any
+;; other vertex within 1 edge, which is the smallest eccentricity of all vertices in this set. Any other vertex has
+;; an eccentricity of 2.
 ;; OUTPUT: Print the radius of the graph as an integer
 
 (def file "/Users/cliff/IdeaProjects/daily-program/src/clojure/graph_radius/matrix1.txt")

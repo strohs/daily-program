@@ -1,4 +1,4 @@
-package java.cliff;
+package cliff;
 
 import java.util.ArrayList;
 import java.util.Collections;
