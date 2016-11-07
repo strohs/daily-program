@@ -17,6 +17,6 @@
                            [org.clojure/math.numeric-tower "0.0.2"]
                            [clojure-csv/clojure-csv "2.0.1"]
                            ]
-            :global-vars {*warn-on-reflection* true}
+  ;:global-vars {*warn-on-reflection* true}
 
-            :main longest-substring.core)
+            :main goldilocks.core)
