@@ -20,24 +20,24 @@
 
 (def input-path "src/clojure/goldilocks/goldilocks-input.txt")
 
-(defn str->int [s] (Integer/parseInt s))
+(defn str->int
+  "convert a numeric string into an integer"
+  [s] (Integer/parseInt s))
 
-(defn read-goldilocks-weight-temp
-  [file]
-  (let [first-line (first (line-seq (io/reader file)))
-        weight-temp (re-seq #"\d+" first-line)]
-    (map #(Integer/parseInt %) weight-temp)))
+(defn strs->ints
+  "convert a sequence of numeric strings into a sequence of integers"
+  [xs] (map #(str->int %) xs))
 
-(defn read-weight-temp-data
-  [file]
-  (let [lines (rest (line-seq (io/reader file)))
-        digit-lines (map #(re-seq #"\d+" %) lines)
-        int-lines (map (fn [[w t]] (list (str->int w) (str->int t))) digit-lines)]
-    int-lines))
+(defn read-lines [input-path]
+  (let [lines (line-seq (io/reader input-path))]
+    (map (fn [line]
+           (->> line
+                (re-seq #"\d+")
+                (strs->ints))) lines)))
 
 (defn -main [input-file]
-  (let [[weight temp] (read-goldilocks-weight-temp input-path)
-        data (read-weight-temp-data input-file)]
+  (let [[weight temp] (first (read-lines input-file))
+        data (rest (read-lines input-file))]
     (keep-indexed (fn [idx [w t]]
                    (if (and (<= weight w) (<= t temp))
                      (list (inc idx) w t))) data)))
