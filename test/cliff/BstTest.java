@@ -1,6 +1,5 @@
 package cliff;
 
-import cliff.Bst;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

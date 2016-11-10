@@ -42,3 +42,4 @@
                    (if (and (<= weight w) (<= t temp))
                      (list (inc idx) w t))) data)))
 
+
