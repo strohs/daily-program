@@ -4,6 +4,8 @@
             :license {:name "Eclipse Public License"
                       :url  "http://www.eclipse.org/legal/epl-v10.html"}
             :source-paths ["src/clojure"]
+            :java-source-paths ["src/java"]
+
   ;:java-source-paths ["src/java"]
   ;:javac-options ["-target" "1.7" "-source" "1.7"]
             :dependencies [[org.clojure/clojure "1.8.0"]
@@ -19,4 +21,4 @@
                            ]
   ;:global-vars {*warn-on-reflection* true}
 
-            :main goldilocks.core)
+            :main number-guess.core)
