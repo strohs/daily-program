@@ -54,7 +54,7 @@
   ;(dosync (ref-set empty-seats 3))
 
   (let [b1 (start-barber 1 empty-seats-chan)
-        b2 (start-barber 2 empty-seats-chan)]                     ;start the barbers
+        b2 (start-barber 2 empty-seats-chan)]               ;start the barbers
     (doseq [customer (range 1 50)]
       (Thread/sleep (+ 100 (rand-int 200)))
       (enter-the-shop customer))

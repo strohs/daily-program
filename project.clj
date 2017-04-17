@@ -6,11 +6,10 @@
             :source-paths ["src/clojure"]
             :java-source-paths ["src/java"]
 
-  ;:java-source-paths ["src/java"]
   ;:javac-options ["-target" "1.7" "-source" "1.7"]
             :dependencies [[org.clojure/clojure "1.8.0"]
                            [org.clojure/core.typed "0.2.63"]
-                           [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
+                           [org.clojure/core.async "0.3.442"]
                            [org.clojure/core.match "0.2.1"]
                            [cheshire "5.2.0"]
                            [clj-time "0.4.4"]
@@ -21,4 +20,4 @@
                            ]
   ;:global-vars {*warn-on-reflection* true}
 
-            :main number-guess.core)
+            :main barbershop.core)
