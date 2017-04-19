@@ -20,4 +20,4 @@
                            ]
   ;:global-vars {*warn-on-reflection* true}
 
-            :main barbershop.core)
+            :main greatest-subseq-sum.core)
