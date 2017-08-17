@@ -9,7 +9,10 @@
 ;; an eccentricity of 2.
 ;; OUTPUT: Print the radius of the graph as an integer
 
-(def file "/Users/cliff/IdeaProjects/daily-program/src/clojure/graph_radius/matrix1.txt")
+;;; NOT COMPLETED
+
+(def file "src/clojure/graph_radius/matrix1.txt")
+
 
 (defn get-lines
   "read input from file"

@@ -2,8 +2,8 @@
 
 ;;; Given a sequence of integers, find a continuous subsequence which maximizes the sum of its elements, that is,
 ;;; the elements of no other single subsequence add up to a value larger than this one.
+;;; run with (-main coll) where coll is a list of integers
 
-; N = size of the original sequence
 (def test-seq [8 2 6 1 5 3 4 7 9])
 (def test2 [-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1])
 
@@ -27,11 +27,11 @@
        (sort-by val)
        (last)))
 
-(defn main [& args]
-  (let [col [-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1]
+(defn -main [coll]
+  (let [col coll
         gss (gss-bf col)]
     (println col)
-    (println "greatest subsequence sum: " gss)))
+    (println "greatest subsequence and its sum: " gss)))
 
 
 ;;; solution from rosetta-code.com

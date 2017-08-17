@@ -1,5 +1,8 @@
 (ns real-world-merge.core)
 
+;;; Challenge 126 - Real World Merge Sort
+;;; https://www.reddit.com/r/dailyprogrammer/comments/1epasu/052013_challenge_126_easy_realworld_merge_sort/
+
 ;;real world merge sort. The idea is to sort 'alist' into 'blist' using only the "0" spaces in blist
 ;;to hold an item from alist
 
@@ -25,4 +28,7 @@
           mitem (first as)
           sorted-col (bubble (assoc bs idx0 mitem) idx0)]
       (merge-sort (rest as) sorted-col))))
+
+(defn main [as bs] (merge-sort as bs))
+;;(main alist blist)
 

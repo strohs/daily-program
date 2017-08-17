@@ -2,9 +2,14 @@
   (:require [clojure.string :as str])
   (:require [clojure.zip :as zip]))
 
+;;; Challenge 298 - Too Many Parens
+;;; https://www.reddit.com/r/dailyprogrammer/comments/5llkbj/2017012_challenge_298_easy_too_many_parentheses/
+
 ;;; The rule for "too many parentheses" around part of an expression is that if removing matching parentheses
 ;;; around a section of text still leaves that section enclosed by parentheses, then those parentheses should be
 ;;; removed as extraneous.
+
+;;; This Challenge is still INCOMPLETE
 
 (def in1 "((C))")
 (def in2 "((a((bc)(de)))f)")
@@ -41,3 +46,5 @@
       (if (empty-paren-loc? loc)
         (recur (zip/replace loc (zip/node (zip/next loc))))
         (recur (zip/next loc))))))
+
+(defn main [s] (replace-dups s))

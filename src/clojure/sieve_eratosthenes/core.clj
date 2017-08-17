@@ -1,5 +1,7 @@
 (ns sieve-eratosthenes.core)
+
 ;;very basic implementation of sieve of Eratosthenes
+
 
 
 (defn primes
@@ -30,6 +32,9 @@
                      0)]]
     prod))
 
-(partition 10 (to-matrix 10))
-(doseq [coll (partition 10 (to-matrix 10))]
-  (println coll))
+(defn main
+  "compute all prime numbers from 0 to max-number"
+  [max-number] (primes max-number))
+;;(partition 10 (to-matrix 10))
+;;(doseq [coll (partition 10 (to-matrix 10))]
+;;  (println coll))

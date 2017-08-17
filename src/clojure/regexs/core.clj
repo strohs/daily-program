@@ -5,9 +5,11 @@
   (:require [clojure.java.io :as io])
   (:gen-class))
 
+;;; Examples of using regular expression in clojure
+
 ;;(def lines (line-seq (io/reader "src/clojure/regexs/oxpress-activity.txt")))
 (def lines (with-open [rdr (io/reader "/Users/cliff/IdeaProjects/daily-program/src/clojure/regexs/oxpress-activity.txt")]
-  (reduce conj [] (line-seq rdr))) )
+            (reduce conj [] (line-seq rdr))))
 
 ;1/20/2012 3:55:31 PM
 (def custom-formatter (tf/formatter "MM/dd/yyyy hh:mm:ss aaa"))

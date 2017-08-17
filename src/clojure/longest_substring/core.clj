@@ -1,5 +1,8 @@
 (ns longest-substring.core)
 
+;;; Longest 2 character substring
+;;; https://www.reddit.com/r/dailyprogrammer/comments/1g0tw1/easy_longest_twocharacter_substring/
+
 (defn gen-subs
   "generate all substrings of 'string' with at least unique-cnt characters in the string"
   [in-str unique-cnt]
@@ -16,3 +19,7 @@
             (gen-subs in-str unique-chars)))
   ;sort-by may not be needed since gen-subs generates the partitions in ascending order
   (last (sort-by count filtered-strs)))
+
+
+(defn -main [in-str unique-cnt] (longest-substr in-str unique-cnt))
+;;(-main "abbcccc" 2)

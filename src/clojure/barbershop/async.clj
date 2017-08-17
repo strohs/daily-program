@@ -1,17 +1,19 @@
 (ns barbershop.async
-  (:refer-clojure :exclude [map reduce into partition partition-by take merge])
-  (:require [clojure.core.async :refer :all :as async]
+  (:require [clojure.core.async :as async :refer [chan thread >!! <!! close! dropping-buffer]]
             [clojure.pprint :refer [pprint]]))
 
+;;; Sleeping barber problem written to use core.async channels
+
+
 ;; number of "waiting" seats for customers
-(def empty-seats-chan (chan (dropping-buffer 3)))
+(def empty-seats-chan (async/chan (async/dropping-buffer 3)))
 
 
 (defn create-log-chan []
-  (let [c (chan)]
-    (thread
+  (let [c (async/chan)]
+    (async/thread
       (loop []
-        (when-let [v (<!! c)]
+        (when-let [v (async/<!! c)]
           (println v)
           (recur)))
       (println "Log Closed"))
@@ -23,7 +25,7 @@
 (defn log-cust
   "log customer status message to the log channel"
   [msg n]
-  (>!! log-chan (str msg (apply str (repeat (- 45 (count msg)) \space)) n)))
+  (async/>!! log-chan (str msg (apply str (repeat (- 45 (count msg)) \space)) n)))
 
 (defn cut-hair
   "simulates cutting hair by waiting up to wait-ms"
@@ -34,10 +36,10 @@
   "listens to channel, ch, for incoming customers, simulates a hair cut when a customer is put on the channel.
   returns the number of hair cuts given"
   [id ch]
-  (thread
+  (async/thread
     (let [tally (atom 0)]
       (loop []
-        (when-let [v (<!! ch)]
+        (when-let [v (async/<!! ch)]
           (log-cust (str "(b" id ") cutting hair of customer") v)
           (cut-hair 800)
           (swap! tally inc)
@@ -47,7 +49,7 @@
 
 (defn enter-the-shop [n]
   (log-cust "(c) entering the shop" n)
-  (>!! empty-seats-chan n))
+  (async/>!! empty-seats-chan n))
 
 
 (defn -main [& args]
@@ -60,6 +62,6 @@
       (enter-the-shop customer))
     (log-cust "(!) all customers have entered the shop" 0)
     (Thread/sleep 2000)
-    (close! empty-seats-chan)
-    (println "(b1) " (<!! b1) "customers got haircuts today")
-    (println "(b2) " (<!! b2) "customers got haircuts today")))
+    (async/close! empty-seats-chan)
+    (println "(b1) " (async/<!! b1) "customers got haircuts today")
+    (println "(b2) " (async/<!! b2) "customers got haircuts today")))

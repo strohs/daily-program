@@ -88,3 +88,6 @@
         (and (wall-on-right? rob) (can-go? rob)) (recur (go rob))
         ;(can-go? rob) (recur (go rob))
         :else (recur (turn-left rob))))))
+
+(def test-robot (Robot. 2 0 :R maze1))
+(defn main [robot] (solve test-robot))

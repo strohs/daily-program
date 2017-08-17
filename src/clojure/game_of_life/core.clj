@@ -1,7 +1,7 @@
 (ns game-of-life.core
   (:gen-class))
 
-;simulation of conway's game of life
+;simulation of conway's game of life taken from the book Clojure Programming
 
 (def grid [[0 0 0]
            [1 1 1]

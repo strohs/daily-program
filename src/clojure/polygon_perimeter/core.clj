@@ -1,6 +1,9 @@
 (ns polygon-perimeter.core)
 
-;compute the perimeter length of a regular polygon, given the circumradius and number of sides
+;;; Challenge 146 Polygon Perimeter
+;;;  https://www.reddit.com/r/dailyprogrammer/comments/1tixzk/122313_challenge_146_easy_polygon_perimeter/
+
+;;; compute the perimeter length of a regular polygon, given the circumradius and number of sides
 
 (defn circumradius
   "s - sidelength, n - number of sides"
@@ -16,3 +19,6 @@
   (* n (side-length n r)))
 
 (defn to-string [p] (format "perimeter: %.2f" p))
+
+(defn main [radius sides] (perimeter radius sides))
+;;(main 5 3.7)

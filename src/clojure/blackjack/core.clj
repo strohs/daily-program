@@ -1,5 +1,10 @@
 (ns blackjack.core)
 
+;;; Challenge 161 Blackjack
+;;; https://www.reddit.com/r/dailyprogrammer/comments/24r50l/552014_161_easy_blackjack/
+;;; run with (-main n) where n is the number of decks
+
+
 (def suits #{:C :D :H :S})
 (def ranks #{:2 :3 :4 :5 :6 :7 :8 :9 :10 :J :Q :K :A})
 (def rank->val {:2 2 :3 3 :4 4 :5 5 :6 6 :7 7 :8 8 :9 9 :10 10 :J 10 :Q 10 :K 10 :A 11})
@@ -43,10 +48,11 @@
                   hand))) [] cards)
     (persistent! hands)))
 
-(let [ deck (shuffle (flatten (repeatedly 2 build-deck)))
-       hands (into-hands deck)
-       blackjacks (count (filter blackjack? hands))
-       bj-percent (with-precision 4 (* 100 (/ (bigdec blackjacks) (count hands))))]
-  (doseq [hand hands]
-    (println (print-hand hand) (if (blackjack? hand) "blackjack!" "")))
-  (println (format "%d hands with %d blackjacks at %.2f percent" (count hands) blackjacks bj-percent)))
+(defn -main [n]
+  (let [ deck (shuffle (flatten (repeatedly n build-deck)))
+        hands (into-hands deck)
+        blackjacks (count (filter blackjack? hands))
+        bj-percent (with-precision 4 (* 100 (/ (bigdec blackjacks) (count hands))))]
+    (doseq [hand hands]
+      (println (print-hand hand) (if (blackjack? hand) "blackjack!" "")))
+    (println (format "%d hands with %d blackjacks at %.2f percent" (count hands) blackjacks bj-percent))))

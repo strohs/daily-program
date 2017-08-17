@@ -1,6 +1,9 @@
 (ns number-guess.core
   (:gen-class))
 
+;;; The number guess challenge fro Clojure Programming
+;;;  run with (-main)
+
 (defn get-input []
   (let [input (Integer/parseInt (read-line))]
     input))

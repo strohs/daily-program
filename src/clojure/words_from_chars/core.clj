@@ -22,9 +22,6 @@
 (def dictionary (read-words *word-path*))
 
 
-(def twords "abc cca aaaaaa bca")
-(def tchars "abc")
-
 (defn get-words [word-string]
   (s/split word-string #"\s+"))
 
@@ -49,4 +46,9 @@
       ;(max-length wfc)
       wfc
       "No Words Found")))
+
+(def twords "abc cca aaaaaa bca")
+(def tchars "abc")
+
+(defn main [] (words-from-chars dictionary "abc"))
 

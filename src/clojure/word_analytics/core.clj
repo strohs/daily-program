@@ -2,8 +2,12 @@
   (:require [clojure.java.io :as io])
   (:require [clojure.string :as s]))
 
-(def lines (with-open [rdr (io/reader "/Users/cliff/IdeaProjects/daily-program/src/clojure/word_analytics/lorem-ipsum.txt")]
-             (reduce conj [] (filter not-empty (line-seq rdr)))) )
+;;; Challenge 125 Word Analytics
+;;; https://www.reddit.com/r/dailyprogrammer/comments/1e97ob/051313_challenge_125_easy_word_analytics/
+
+
+(def lines (with-open [rdr (io/reader "src/clojure/word_analytics/lorem-ipsum.txt")]
+             (reduce conj [] (filter not-empty (line-seq rdr)))))
 
 ;splits lines into words, keeps punctuation
 (def words

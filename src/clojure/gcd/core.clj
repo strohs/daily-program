@@ -1,5 +1,8 @@
 (ns gcd.core)
 
+;;; find the greatest common divisor of two numbers
+;;; run with (-main)
+
 (defn gcd [n1 n2]
   (if (= (rem n1 n2) 0)
     n2

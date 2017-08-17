@@ -10,6 +10,8 @@
 ;; We also want to keep the vowels we removed around (in their original order), which in this case is:
 ;; ouaaaaoai
 
+;;; NOT COMPLETED
+
 
 (def vowels #{\a \e \i \o \u})
 (def vowels-spaces (conj vowels \space))

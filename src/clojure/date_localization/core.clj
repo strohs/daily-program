@@ -3,6 +3,8 @@
   (:require [clojure.string :as cs])
   (:gen-class))
 
+;;; Just a test of date formatting and replacing
+
 ;;"%l": Milliseconds (000 to 999)
 ;       %1$tL
 ; "%s": Seconds (00 to 59)
@@ -23,15 +25,15 @@
 ;       %1$ty
 
 (def mapper {
-            "%l" "%1$tL"
-            "%s" "%1$tS"
-            "%m" "%1$tM"
-            "%h" "%1$tI"
-            "%H" "%1$tH"
-            "%c" "%1$tp"
-            "%d" "%1$td"
-            "%M" "%1$tm"
-            "%y" "%1$ty"})
+             "%l" "%1$tL"
+             "%s" "%1$tS"
+             "%m" "%1$tM"
+             "%h" "%1$tI"
+             "%H" "%1$tH"
+             "%c" "%1$tp"
+             "%d" "%1$td"
+             "%M" "%1$tm"
+             "%y" "%1$ty"})
 
 (defn replacer
   [in-str]

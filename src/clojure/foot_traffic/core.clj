@@ -1,7 +1,11 @@
 (ns foot-traffic.core
   (:require [clojure.string :as cs]))
 
-(def file-path "C:\\Users\\Cliff\\IdeaProjects\\DailyProgrammer\\src\\foot_traffic\\sample2.txt")
+;;; Challenge 133 Foot Traffic Analysis
+;;;  https://www.reddit.com/r/dailyprogrammer/comments/1iambu/071513_challenge_133_easy_foottraffic_analysis/
+;;;  run (-main)
+
+(def file-path "src/clojure/foot_traffic/sample2.txt")
 
 (defn file-lines [f]
   (with-open [rdr (clojure.java.io/reader f)]
@@ -31,3 +35,4 @@
     (doseq [[id stats] room-stats]
       (println (format "Room %s, %s minute average visit, %s visitors total" id (length-of-stay stats) (num-visitors stats))))))
 
+(defn -main [] (run))

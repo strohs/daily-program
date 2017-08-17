@@ -1,6 +1,7 @@
 (ns barbershop.core)
 
-;;;; Sleeping barber problem
+;;; Sleeping barber problem all credit to Chas Emerick for the code example
+;;; run with (-main)
 
 ;; number of seats in the shop
 (def empty-seats (ref 3))

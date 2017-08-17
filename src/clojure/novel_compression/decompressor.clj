@@ -1,6 +1,7 @@
 (ns novel-compression.decompressor
   (:require [clojure.string :as str]))
 
+;;;; Challenge 162 Novel decompressor
 ;;;; http://www.reddit.com/r/dailyprogrammer/comments/25clki/5122014_challenge_162_easy_novel_compression_pt_1/
 
 (def ^:dynamic *word-path* "src/clojure/novel_compression/words.txt")
@@ -47,4 +48,7 @@
 
 (def ts "0^ 1 6 7 8 5 10 2 . R")
 (def ts5 "0^ 1 6 7 8 , 18^ - 0^ - 19 . R E")
+
+(defn -main [str] (decompress str))
+;;(-main ts)
 

@@ -2,6 +2,7 @@
   (:require [clojure.string :as str]
             [clojure.core.match :as pm]))
 
+;;; Challenge 162 Novel Compressor
 ;;; http://www.reddit.com/r/dailyprogrammer/comments/25hlo9/5142014_challenge_162_intermediate_novel/
 
 (defn tokenize-words [s] (str/split s #"[- ,.?!;:\n]+"))
@@ -77,3 +78,4 @@ I do not like them anywhere!")
   (when (check-input s)
     (let [dictionary (into-dictionary s)]
       (compress s dictionary))))
+;;(-main in1)

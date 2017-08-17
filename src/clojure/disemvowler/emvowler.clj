@@ -4,7 +4,7 @@
             [disemvowler.trie :as trie]))
 
 ;; generate trie from word list
-;;
+;;; NOT WORKING
 
 
 (defn build-partitions [coll]
@@ -58,7 +58,7 @@
     (for [p perms
           :let [ sentence (chars->str p)
                  words (str/split sentence #"\s+")]
-          :when (all-matching-words? words)
-          ]
+          :when (all-matching-words? words)]
+
       words)))
 

@@ -1,6 +1,11 @@
 (ns euler.problem8.core
   (:require [clojure.string :as str]))
 
+;;; Project Euler problem 8
+;;;  Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+;;;  What is the value of this product?
+;;; run with (-main)
+
 ;; get rid out of whitespace and newlines in the 1000 digit string
 (def num-str (str/replace
                "73167176531330624919225119674426574742355349194934
@@ -37,3 +42,5 @@
                    (sorted-map)
                    (partition 13 1 digits))]
     (last prod-map)))
+
+(defn -main [& args] (largest13 num-vec))

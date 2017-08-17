@@ -1,6 +1,8 @@
 (ns damage-control.core)
 
-;;;;  http://www.reddit.com/r/dailyprogrammer/comments/24da3f/4302014_challenge_160_intermediate_part_2_damage/
+;;; http://www.reddit.com/r/dailyprogrammer/comments/24da3f/4302014_challenge_160_intermediate_part_2_damage/
+;;; CHALLENGE NOT COMPLETED
+
 
 ;;; :B = regular building
 ;;; :* = destroyed building

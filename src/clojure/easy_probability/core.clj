@@ -24,9 +24,11 @@
 
 (defn simulate []
   (let [roll-map (do-rolls [10 100 1000 10000 100000 1000000])
-        header "Rolls    1s      2s      3s      4s      5s      6s\n========================================================="
-       ]
+        header "Rolls    1s      2s      3s      4s      5s      6s\n========================================================="]
+
     (println header)
     (doseq [n (keys roll-map)
-          :let [pcts (mapv #(pct-of % (roll-map n)) (range 1 7))]]
+            :let [pcts (mapv #(pct-of % (roll-map n)) (range 1 7))]]
       (println (format "%-7d  %5.2f%%  %5.2f%%  %5.2f%%  %5.2f%%  %5.2f%%  %5.2f%%" n (pcts 0) (pcts 1) (pcts 2) (pcts 3) (pcts 4) (pcts 5))))))
+
+(defn -main [& args] (simulate))

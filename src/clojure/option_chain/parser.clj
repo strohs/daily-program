@@ -28,8 +28,8 @@
         strike (symbol-map :strike)
         exp-date (symbol-map :exp-date)]
     {:symbol symbol :ticker ticker :exp-date exp-date :strike (as-float strike)
-     :bid (as-float bid) :ask (as-float ask) :bid-ask-spread (as-float bid-ask-spread) :days-left (as-int days-left)}
-    ))
+     :bid (as-float bid) :ask (as-float ask) :bid-ask-spread (as-float bid-ask-spread) :days-left (as-int days-left)}))
+
 
 (defn percent-return [buy strike bid]
   (* (/ (+ (- strike buy) bid) buy) 100))

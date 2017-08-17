@@ -2,6 +2,8 @@
   (:require [clj-time.core :as ct])
   (:gen-class))
 
+;;; testing clojures JODA time library
+
 (defn -main [& args]
   (println "now is: " (ct/now))
   (println "epoch is: " (ct/epoch))

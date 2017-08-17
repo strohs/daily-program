@@ -1,13 +1,18 @@
 (ns alphabetizing-cipher.core
   (:require [clojure.java.io :as io]))
 
+;;; Challenge 118  HARD
+;;; https://www.reddit.com/r/dailyprogrammer/comments/178vsz/012513_challenge_118_hard_alphabetizing_cipher/
+;;; NOTE: not currently working
+
 (def abc '(\a \b \c \d \e \f \g \h \i \j \k \l \m \n \o \p \q \r \s \t \u \v \w \x \y \z))
 
 (def results (ref {}))
 (def worker (agent 0))
 
 ;;six letter words
-(def words (line-seq (io/reader "/Users/cliff/IdeaProjects/daily-program/src/clojure/alphabetizing_cipher/six-letter-words.txt")))
+(def words (line-seq
+             (io/reader "src/clojure/alphabetizing_cipher/six-letter-words.txt")))
 
 
 (defn build-map

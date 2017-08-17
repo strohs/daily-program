@@ -1,9 +1,8 @@
 # daily-program
-
 A repository of my attempts to solve programming challenges, from Reddit /r/dailyprogrammer, using clojure
 
 ## Installation
-
+Each challenge is in a separate namespace and should be run from its corresponding (main) method
 
 ## Usage
 
@@ -18,7 +17,7 @@ A repository of my attempts to solve programming challenges, from Reddit /r/dail
 ...
 
 ### Bugs
-
+some of the harder challenges are still being worked-on and may not finish.
 ...
 
 ### Any Other Sections
@@ -26,7 +25,4 @@ A repository of my attempts to solve programming challenges, from Reddit /r/dail
 ### Might be Useful
 
 ## License
-
-Copyright © 2013 FIXME
-
 Distributed under the Eclipse Public License, the same as Clojure.

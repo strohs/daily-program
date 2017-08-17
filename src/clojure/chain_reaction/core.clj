@@ -1,15 +1,17 @@
 (ns chain-reaction.core)
 
+;;; NOTE: this challenge is not working
+
 ;x is row  y is column
 ;test a Java version of this
 (def data {
                 :A {:x 0 :y 0 :r 5 :d "udlr" :reacted? false}
                 :B {:x 0 :y 4 :r 5 :d "ud" :reacted? false}
                 :C {:x 2 :y 4 :r 2 :d "lr" :reacted? false}
-                :D {:x 3 :y 2 :r 3 :d "udlr" :reacted? false}
-                  })
+                :D {:x 3 :y 2 :r 3 :d "udlr" :reacted? false}})
 
-(def dir->fn { :u up? :d down? :l left? :r right? })
+
+(def dir->fn { :u up? :d down? :l left? :r right?})
 
 (defn empty-matrix [n]
   (vec (repeatedly n #(vec (repeat n " ")))))
@@ -109,8 +111,8 @@
 
 (defn react [init-key data]
   (loop [elements data
-        ekey init-key
-        reacted (hash-map ekey (ekey elements))]
+         ekey init-key
+         reacted (hash-map ekey (ekey elements))]
     (to-string elements)
     (if (empty? reacted)
       elements

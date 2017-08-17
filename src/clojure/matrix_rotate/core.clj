@@ -26,6 +26,7 @@
 (defn rotate-90 [matrix]
   (mapv reverse (transpose matrix)))
 
-(->> m3
+(defn -main [& args]
+  (->> m3
      (rotate-90)
-     (rotate-90))
+     (rotate-90)))

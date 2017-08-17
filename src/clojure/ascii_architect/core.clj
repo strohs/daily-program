@@ -1,6 +1,7 @@
 (ns ascii-architect.core)
 
 ;;; Challenge 158  http://www.reddit.com/r/dailyprogrammer/comments/236va2/4162014_challenge_158_intermediate_part_1_the/
+;;; run with (-main ss)
 
 ;; sample input string
 (def ss "j3f3e3e3d3d3c3cee3c3c3d3d3e3e3f3fjij3f3f3e3e3d3d3c3cee3c3c3d3d3e3e3fj")
@@ -29,7 +30,7 @@
 
 
 (defn parse-lines
-  "parse an input line into a VoV of ascii lines"
+  "parse an input line into a Vec of Vec of ascii lines"
   [line]
   (let [matches (re-seq #"(\d?)([a-z])" line)]
     (mapv build-column matches)))

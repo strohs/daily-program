@@ -5,6 +5,7 @@
 
 ;; generate trie from word list
 ;;
+;;; NOT WORKING
 
 
 (defn build-partitions [coll]

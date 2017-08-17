@@ -1,7 +1,10 @@
 (ns student-management.core
   (:require [clojure.java.io :as io]))
 
-(def lines (line-seq (io/reader "/Users/cliff/IdeaProjects/daily-program/src/clojure/student_management/grades.txt")))
+;;; Challenge 136 Student Management
+;;;  https://www.reddit.com/r/dailyprogrammer/comments/1kphtf/081313_challenge_136_easy_student_management/
+
+(def lines (line-seq (io/reader "src/clojure/student_management/grades.txt")))
 
 ;;(def num-students (Integer. (second (re-matches #"(\d+) (\d+)" (first lines)))))
 
@@ -11,5 +14,6 @@
 
 (defn student-name [line] (re-find #"\w+" line))
 
-(doseq [line lines]
-  (println (format "%s %3.2f" (student-name line) (average (re-seq #"\d+" line)))))
+(defn main []
+  (doseq [line lines]
+    (println (format "%s %3.2f" (student-name line) (average (re-seq #"\d+" line))))))

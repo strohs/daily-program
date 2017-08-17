@@ -1,5 +1,9 @@
 (ns string-transposition.core)
 
+;;; Challenge 137 - String transposition
+;;; https://www.reddit.com/r/dailyprogrammer/comments/1m1jam/081313_challenge_137_easy_string_transposition/
+;;; NOT COMPLETED
+
 (def ins '("cat" "horse" "zebra"))
 
 (defn transpose [coll]
@@ -19,3 +23,5 @@
             c (range cols)]
       (print (print-ch (get-in mat [c r])))
       (if (= c (- cols 1)) (println)))))
+
+(print-matrix ins)

@@ -4,11 +4,11 @@
             [clojure.pprint :refer [pprint]]
             [cheshire.core :as cheshire]))
 
+;;; Async example from Timothy Baldridge's Conj talk on Async
 
 ;; The most basic primitive in Core.Async is the channel
 
 (def c (chan))
-
 
 (chan)
 ;; We can attach listeners via take!
@@ -644,8 +644,8 @@
   (go
    (-> (str "http://api.themoviedb.org/3/" url "api_key=" key)
        http-get
-       <!
-       )))
+       <!)))
+
 
 (defn latest-movies []
   (request-and-process "movies/latest?"))
