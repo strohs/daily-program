@@ -2,7 +2,8 @@
 A repository of my attempts to solve programming challenges, from Reddit /r/dailyprogrammer, using clojure
 
 ## Installation
-Each challenge is in a separate namespace and should be run from its corresponding (main) method
+Each challenge is in a separate namespace. Each challenge should be individually loaded into your REPL and then run 
+using its corresponding (main) method
 
 ## Usage
 
