@@ -9,7 +9,7 @@ function tallyPoint(ch) {
 
 /**
  * converts input string into a Map. The keys of the map are the lowercase characters of the inStr. The values are
- * arrays containing the case insensitive characters that equal the key: e.g.  ['a', [a,a,A,A,A] ]
+ * arrays containing the case insensitive characters that equal the key: e.g.  ['a', ['a','a','A','A','A'] ]
  * @param inStr
  * @returns {Map<String, Array<String>>}
  */
