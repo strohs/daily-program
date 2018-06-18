@@ -4,8 +4,17 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Given a grid, find the maximum number of connected colors. This is very similar to a flood-fill algorithm.
- * This challenge will use three colors, RED, GREEN, BLUE, and a 3x4 grid (for simplicity)
+ * Given a grid, find the maximum number of connected colors. Cells in a grid are connected if they share the same color
+ * with the cell to the left,right,above or below it. This is similar to a flood-fill algorithm.
+ * This challenge will use three colors, RED(R), GREEN(G), BLUE(B), and a 3x4 grid (for simplicity).
+ *
+ * Here is the default grid:
+ *                          G  G  B  R
+ *                          G  B  R  B
+ *                          R  B  B  B
+ * the max number of connected colors is five for the color BLUE
+ *
+ * I'm going to use (to be different) a doubly linked list to hold the grid. The
  *
  * User: Cliff
  */
@@ -24,7 +33,7 @@ class Grid {
         this.nodes = nodes;
     }
 
-    //build the default 3x4 grid as a list of connected nodes..BRUTE FORCE build
+    //build the default 3x4 grid as a list of connected nodes..BRUTE FORCE build, this is ugly
     public static Grid buildDefGrid( int rows, int cols ) {
         Node n0 = new Node(0,Color.GREEN );
         Node n1 = new Node( 1, Color.GREEN );
@@ -38,7 +47,7 @@ class Grid {
         Node n9 = new Node( 9, Color.BLUE );
         Node n10 = new Node( 10, Color.BLUE );
         Node n11 = new Node( 11, Color.BLUE );
-        //connect nodes
+        //connect the nodes
         n0.right = n1; n0.down = n4;
         n1.left = n0; n1.right = n2; n1.down = n5;
         n2.left = n1; n2.right = n3; n2.down = n6;
@@ -151,7 +160,8 @@ public class Main {
 
 
 
-    //iterative solution
+    //iterative solution using a Stack for Depth First Search
+    // returns a list of the maximum connected nodes
     public static List<Node> maxConnected( Grid grid ) {
         //holds visited nodes
         Set<Node> visited = new HashSet<>();
