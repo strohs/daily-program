@@ -13,7 +13,35 @@ import java.util.Random;
  */
 public class Fibo {
 
+    //find the fibonacci number at a particular position. pos starts at 1. this is the iterative solution
+    public static long fibPos( int pos ) {
+        if (pos < 3) return pos - 1;
+        int curPos = 3;
+        long sLast = 0;
+        long last = 1;
+        while (curPos <= pos) {
+            long temp = last;
+            last = sLast + last;
+            sLast = temp;
+            curPos++;
+        }
+        return last;
+    }
 
+    //recursive solution for finding the fibo number at a specific position. pos starts at 1
+    public static long fibPosRec( final int pos ) {
+        if ( pos < 3 ) return pos - 1;
+        return fibPosRec( 0,1, 3, pos );
+    }
+    public static long fibPosRec( long slast, long last, int curPos, int pos ) {
+        if ( curPos >= pos )
+            return slast + last;
+        else 
+            return fibPosRec( last, slast + last, ++curPos, pos );
+
+    }
+
+    //return the first n fibonacci numbers
     public static List<Integer> fib( int n ) {
         if ( n <= 0) throw new IllegalArgumentException( "n must be >= 0 " );
 
@@ -52,9 +80,13 @@ public class Fibo {
     public static void main( String[] args ) {
         List<Integer> f = fib(20);
         f.forEach( System.out::println );
-        System.out.println("SHUFFLE TEST:");
-        long seed = System.nanoTime();
-        Collections.shuffle(f, new Random( seed ) );
-        f.forEach( System.out::println );
+
+        int pos = 20;
+        long fnum = fibPosRec( pos );
+        System.out.println( String.format("Fib num at pos %d is %d", pos,fnum) );
+       // System.out.println("SHUFFLE TEST:");
+        //long seed = System.nanoTime();
+        //Collections.shuffle(f, new Random( seed ) );
+        //f.forEach( System.out::println );
     }
 }
