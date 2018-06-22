@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class KMostFrequent {
 
     //compares the entry set by values in descending order, if the values are equal, it compares the keys
-    Comparator<Map.Entry<Integer,Integer>> vkComparater = ( e1, e2 ) -> {
+    private Comparator<Map.Entry<Integer,Integer>> vkComparater = ( e1, e2 ) -> {
         if ( e1.getValue().equals( e2.getValue() ) )
             return Integer.compare( e1.getKey(),e2.getKey() ) * -1; //descending order
         else
@@ -43,7 +43,6 @@ public class KMostFrequent {
         int [] arr1 = {7,1,2,3,1,5,1,6,7,1,2,2,8,7};
         List<Map.Entry> kfreqs = kmf.kmf( arr1, 4);
         kfreqs.forEach( entry -> System.out.println( String.format( "key:%d occurs:%d", entry.getKey(), entry.getValue())) );
-
         
     }
 }
