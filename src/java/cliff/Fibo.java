@@ -1,9 +1,8 @@
 package cliff;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,7 +32,7 @@ public class Fibo {
         if ( pos < 3 ) return pos - 1;
         return fibPosRec( 0,1, 3, pos );
     }
-    public static long fibPosRec( long slast, long last, int curPos, int pos ) {
+    private static long fibPosRec( long slast, long last, int curPos, int pos ) {
         if ( curPos >= pos )
             return slast + last;
         else 
@@ -77,6 +76,14 @@ public class Fibo {
         return fibs;
     }
 
+    //generate the a sequence of fibonacci numbers up to the limit
+    public static List<Long> fiboList( int limit ) {
+        return Stream.iterate( new long[]{ 1, 1 }, p -> new long[]{ p[1], p[0]+p[1] })
+                .limit( limit )
+                .map( longPair -> longPair[0] )
+                .collect(Collectors.toList());
+    }
+
     public static void main( String[] args ) {
         List<Integer> f = fib(20);
         f.forEach( System.out::println );
@@ -84,6 +91,8 @@ public class Fibo {
         int pos = 20;
         long fnum = fibPosRec( pos );
         System.out.println( String.format("Fib num at pos %d is %d", pos,fnum) );
+        System.out.println("---------------------");
+        fiboList( 20 ).forEach( System.out::println );
        // System.out.println("SHUFFLE TEST:");
         //long seed = System.nanoTime();
         //Collections.shuffle(f, new Random( seed ) );
