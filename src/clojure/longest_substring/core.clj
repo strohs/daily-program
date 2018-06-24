@@ -23,3 +23,16 @@
 
 (defn -main [in-str unique-cnt] (longest-substr in-str unique-cnt))
 ;;(-main "abbcccc" 2)
+
+
+(defn longest
+  "longest contiguous character substring within the string s"
+  [s]
+  (loop [s s
+         longest-str ""]
+    (if (empty? s)
+      (vector longest-str (count longest-str))
+      (let [contig-chars (take-while #(= (first s) %) s)]
+        (if (> (count contig-chars) (count longest-str))
+          (recur (drop (count contig-chars) s) (apply str contig-chars))
+          (recur (drop (count contig-chars) s) longest-str))))))

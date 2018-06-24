@@ -1,4 +1,4 @@
-(ns disemvowler.trie)
+(ns trie.trie)
 
 ;;; A very elegant trie builder that a found on the internet
 ;;; run with (-main words) where words is a collection of strings to put into the trie
@@ -33,7 +33,7 @@
     (\a \b \d \j \o)
     (\a \b \d \t \y)))
 
-(def words ["a" "ad" "add" "adder" "addition" "abaco" "abbess" "abby" "al" "all" "algo" "also"])
+(def words ["a" "ad" "add" "adder" "addition" "abaco" "abbess" "abby" "ali" "all" "algo" "algorithm" "also"])
 
 (defn -main [words]
   (let [trie (build words)

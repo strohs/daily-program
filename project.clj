@@ -7,7 +7,7 @@
             :java-source-paths ["src/java"]
 
   ;:javac-options ["-target" "1.7" "-source" "1.7"]
-            :dependencies [[org.clojure/clojure "1.8.0"]
+            :dependencies [[org.clojure/clojure "1.9.0"]
                            ;;[org.clojure/core.typed "0.2.63"]
                            [org.clojure/core.async "0.3.443"]
                            ;;[org.clojure/core.match "0.2.1"]
