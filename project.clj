@@ -16,7 +16,8 @@
                            [org.clojure/tools.trace "0.7.6"]
                            [org.clojure/math.combinatorics "0.0.7"]
                            [org.clojure/math.numeric-tower "0.0.2"]
-                           [clojure-csv/clojure-csv "2.0.1"]]
+                           [clojure-csv/clojure-csv "2.0.1"]
+                           [junit/junit "4.12"]]
 
                            
 
