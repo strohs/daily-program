@@ -5,8 +5,8 @@
 
 
 
-(defn k-freqs
-  "brute force approach using closure core functions"
+(defn k-freq-numbers
+  "brute force approach using clojure core functions"
   [col k]
   (let [vk-comp (fn [[k1 v1] [k2 v2]]
                   (if (= v1 v2)
@@ -16,5 +16,9 @@
          (frequencies)
          (sort-by identity vk-comp)
          (take 2))))
+
+
+
+
 
 

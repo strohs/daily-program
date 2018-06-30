@@ -1,7 +1,5 @@
 package daily_program;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -18,15 +16,15 @@ public class KClosestPoints {
 
 
     //helper class that stores x,y coordinates and the distance between them and the origin
-    private class XYDist {
+    private class XYPair {
         private Integer x;    //x coordinate
         private Integer y;    //y coordinate
         private Integer dist; //distance between x,y coordinate and the origin
 
-        public XYDist( int [] xy ) {
+        public XYPair( int [] xy ) {
             this.x = xy[0];
             this.y = xy[1];
-            this.dist = distance( 0,0 ,x ,y );
+            this.dist = distance( 0,0, x, y );
         }
 
         //compute the euclidian distance between two points.
@@ -52,15 +50,15 @@ public class KClosestPoints {
      *
      * @param points - an array of arrays containing x,y coordinates
      * @param k integer specifying the number of closest points to find
-     * @return collection of XYDist objects representing the k-closest points to the origin
+     * @return collection of XYPair objects representing the k-closest points to the origin
      */
-    public Collection<XYDist> findKClosest( int [][] points, int k ) {
-        //this is a priority queue that is configured to sort XYDist objects by distance to origin,
+    public Collection<XYPair> findKClosest( int [][] points, int k ) {
+        //this is a priority queue that is configured to sort XYPair objects by distance to origin,
         // with closest distance stored at head of the queue
-        PriorityQueue<XYDist> pqueue = new PriorityQueue<>( Comparator.comparing( o -> o.dist ) );
+        PriorityQueue<XYPair> pqueue = new PriorityQueue<>( Comparator.comparing( o -> o.dist ) );
         Arrays.stream( points )
                 .forEach( point -> {
-                    XYDist xyd = new XYDist( point ); //convert each point to a XYDist
+                    XYPair xyd = new XYPair( point ); //convert each point to a XYPair
                     pqueue.offer( xyd );              //store each point in Priority Queue (acting as a max heap
                 } );
         return pqueue.stream().limit( k ).collect( Collectors.toList() );
@@ -70,9 +68,9 @@ public class KClosestPoints {
 
     public static void main( String[] args ) {
         KClosestPoints kcp = new KClosestPoints();
-        Collection<XYDist> kclosest = kcp.findKClosest( points1, 3 );
+        Collection<XYPair> kclosest = kcp.findKClosest( points1, 3 );
         kclosest.forEach( System.out::println );
         //System.out.println("-----DEBUG------------");
-        //Arrays.stream( points1 ).map( ints -> kcp.new XYDist( ints ) ).forEach( System.out::println );
+        //Arrays.stream( points1 ).map( ints -> kcp.new XYPair( ints ) ).forEach( System.out::println );
     }
 }
