@@ -1,6 +1,6 @@
 (ns longest-substring.core)
 
-;;; Longest 2 character substring
+;;; Longest contiguous 2 character substring
 ;;; https://www.reddit.com/r/dailyprogrammer/comments/1g0tw1/easy_longest_twocharacter_substring/
 
 (defn gen-subs
@@ -36,3 +36,5 @@
         (if (> (count contig-chars) (count longest-str))
           (recur (drop (count contig-chars) s) (apply str contig-chars))
           (recur (drop (count contig-chars) s) longest-str))))))
+
+(def counter 0)
