@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * User: Cliff
  */
 public class KClosestPoints {
-    //in this aray closest points are [-1,0 ::1], [0,-2 ::2], [-2,-3 ::3] tie with [3,2 ::3]
+    //in this array closest points are [-1,0 ::1], [0,-2 ::2], [-2,-3 ::3] tie with [3,2 ::3]
     static final int [][] points1 = { {-2,-4},{0,-2}, {-1,0}, {3,-5}, {-2,-3}, {3,2} };
 
 
@@ -37,16 +37,16 @@ public class KClosestPoints {
         
         @Override
         public String toString() {
-            return String.format( "x: %2d y: %2d   dist: %d", x,y,dist );
+            return String.format( "x(%2d) y(%2d)   dist(%2d)", x,y,dist );
         }
 
     }
 
     /**
      * find the k closest points to the origin. This algorithm is O(n) in time, it iterates through the point
-     * array one time, creates a helper object that stores the x,y coordinate plus distance to the origin, and then
+     * array one time, creates a helper object (XYPair) that stores the coordinates plus distance to the origin, and
      * stores the helper object in a priority queue that is configured to sort objects based on distance to the
-     * origin (by using a comparator).
+     * origin.
      *
      * @param points - an array of arrays containing x,y coordinates
      * @param k integer specifying the number of closest points to find
