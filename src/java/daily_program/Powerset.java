@@ -7,7 +7,7 @@ import java.util.Optional;
 
 /**
  * POWERSET
- * generate all subsets of a collection of items passed in as an array
+ * generate all subsets of a collection of items passed in as a List of type T
  * Example: given the following array of integers: [1,2,3]
  * Returns:  in any order, the following collection:
  *          { {} {1} {2} {3} {1,2} {2,3} {3,1} {1,2,3} }
@@ -32,7 +32,7 @@ public class Powerset<T> {
         }
 
         List<T> currSet2 = new ArrayList<>( currSet ); //currSet2 holds a copy of the currentSet
-        currSet.add( origSet.get(0) ); //currSet holds the first element of from origSet
+        currSet.add( origSet.get(0) ); //currSet holds the first element from origSet
         List<T> origRest = origSet.subList( 1, origSet.size() ); //origRest is all elements of original set minus the first element
 
         powersetHelper( origRest, currSet, pSet );
@@ -41,9 +41,9 @@ public class Powerset<T> {
     
 
     public static void main( String[] args ) {
-        Powerset<Integer> powerset = new Powerset<>();
-        List<Integer> inList = Arrays.asList( 1,2,3 );
-        List<List<Integer>> pset = powerset.genPowerset( inList );
+        Powerset<String> powerset = new Powerset<>();
+        List<String> inList = Arrays.asList( "A", "B", "C");
+        List<List<String>> pset = powerset.genPowerset( inList );
         pset.forEach( System.out::println );
     }
 }

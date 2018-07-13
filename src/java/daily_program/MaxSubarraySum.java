@@ -1,7 +1,7 @@
 package daily_program;
 
 /**
- * Find the subarray with the maximum sum
+ * Find the subarray with the maximum sum and return the maximum sum
  * This approach will use Kadane's algorithm
  *
  * This algo only works for arrays containing at least one positive integer, arrays with all negatives will return
@@ -15,10 +15,10 @@ public class MaxSubarraySum {
         int maxSoFar = 0;
         int maxEndingHere = 0;
 
-        for ( int i = 0; i < arr.length; i++ ) {
-            maxEndingHere += arr[i];
-            if (maxEndingHere < 0 ) maxEndingHere = 0;
-            if (maxSoFar < maxEndingHere )
+        for ( int n : arr ) {
+            maxEndingHere += n;
+            if ( maxEndingHere < 0 ) maxEndingHere = 0;
+            if ( maxSoFar < maxEndingHere )
                 maxSoFar = maxEndingHere;
         }
         return maxSoFar;
@@ -28,7 +28,7 @@ public class MaxSubarraySum {
         int [] arr1 = {-2,-3,4,-1,-2,1,5,-3};
         int [] arr2 = {1,-2,-3};
 
-        int max = maxSubarraySum( arr2 );
+        int max = maxSubarraySum( arr1 );
         System.out.println(max);
     }
 }
