@@ -26,7 +26,7 @@ public class LongestConsecutiveSequence {
         Set<Integer> set = new HashSet<>();
         Arrays.stream( arr ).forEach( set::add );
 
-        for ( int n : arr ) {
+        for (int n : arr) {
             //count how many integers are one greater than the current array element
             int curInt = n;
             while ( set.contains( curInt + 1 ) ) {

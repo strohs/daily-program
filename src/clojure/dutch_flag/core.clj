@@ -15,5 +15,6 @@
 (defn -main [n]
   ;; build a collection of random colors from colors
   (def col (repeatedly n #(rand-nth colors)))
+  (println "unsorted colors:" col)
   ;;sort the colors based on their index in colors
   (sort-by #(.indexOf colors %) < col))
