@@ -29,6 +29,13 @@
        (mapv str->char)
        (apply str)))
 
+(defn rgb->hexstr
+  "convert R,G,B integer values to a HTML hex string"
+  [r g b]
+  (->> (map #(Integer/toHexString %) [r g b])
+       (apply str "#")
+       (.toUpperCase)))
+
 (defn -main [in]
   (let [bin-strs (mapv hex->binary in)
         ch-strs (mapv bin->chars bin-strs)]

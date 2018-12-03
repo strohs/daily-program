@@ -7,7 +7,7 @@
             :java-source-paths ["src/java"]
 
   ;:javac-options ["-target" "1.7" "-source" "1.7"]
-            :dependencies [[org.clojure/clojure "1.9.0"]
+            :dependencies [[org.clojure/clojure "1.10.0-RC2"]
                            ;;[org.clojure/core.typed "0.2.63"]
                            [org.clojure/core.async "0.3.443"]
                            ;;[org.clojure/core.match "0.2.1"]
@@ -23,4 +23,5 @@
 
   ;:global-vars {*warn-on-reflection* true}
 
-            :main game-of-life.core)
+  ;;          :main game-of-life.core
+  )
