@@ -37,12 +37,11 @@ public class Fibo {
             return slast + last;
         else 
             return fibPosRec( last, slast + last, ++curPos, pos );
-
     }
 
     //return the first n fibonacci numbers
     public static List<Integer> fib( int n ) {
-        if ( n <= 0) throw new IllegalArgumentException( "n must be >= 0 " );
+        if ( n <= 0) throw new IllegalArgumentException( "n must be > 0 " );
 
         List<Integer> fibs = new ArrayList<>();
         if ( n == 1 ) {

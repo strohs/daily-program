@@ -6,15 +6,15 @@ import java.util.stream.Collectors;
 /**
  * Given a grid, find the maximum number of connected colors. Cells in a grid are connected if they share the same color
  * with the cell to the left,right,above or below it. This is similar to a flood-fill algorithm.
- * This challenge will use three colors, RED(R), GREEN(G), BLUE(B), and a 3x4 grid (for simplicity).
+ * This challenge will use three colors, R(R), G(G), B(B), and a 3x4 grid (for simplicity).
  *
  * Here is the default grid:
  *                          G  G  B  R
  *                          G  B  R  B
  *                          R  B  B  B
- * the max number of connected colors is five for the color BLUE
+ * the max number of connected colors is five for the color B
  *
- * I'm going to use (to be different) a doubly linked list to hold the grid. The
+ * I'm going to use (just to be different) a doubly linked list to hold the grid. The
  *
  * User: Cliff
  */
@@ -27,6 +27,7 @@ class Grid {
     int cols;
     List<Node> nodes;
 
+
     public Grid( int rows, int cols, List<Node> nodes ) {
         this.rows = rows;
         this.cols = cols;
@@ -34,8 +35,8 @@ class Grid {
     }
 
     //build the default 3x4 grid as a list of connected nodes..BRUTE FORCE build, this is ugly
-    public static Grid buildDefGrid( int rows, int cols ) {
-        Node n0 = new Node(0,Color.GREEN );
+    public static Grid buildDefGrid(int rows, int cols ) {
+        Node n0 = new Node(0, Color.GREEN );
         Node n1 = new Node( 1, Color.GREEN );
         Node n2 = new Node( 2, Color.BLUE );
         Node n3 = new Node( 3, Color.RED );
@@ -117,7 +118,7 @@ class Node {
         up = down = left = right = null;
     }
 
-    public Node( int index, Color color, Node up, Node down, Node left, Node right ) {
+    public Node(int index, Color color, Node up, Node down, Node left, Node right ) {
         this.index = index;
         this.color = color;
         this.up = up;
@@ -235,6 +236,8 @@ public class Main {
 
     public static void main( String[] args ) {
 
+        Color[][] colors = new Color[3][4];
+        colors[0][0] = Color.BLUE;
         //the grid of nodes
         Grid grid = Grid.buildDefGrid( 3,4 );
         //current longest list of nodes of a color
