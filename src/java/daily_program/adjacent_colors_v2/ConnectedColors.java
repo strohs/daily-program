@@ -24,18 +24,18 @@ import java.util.stream.Collectors;
 enum Color {R, G, B} // Red, Green, Blue
 
 /**
- * Grid is a 2D grif backed by a generic 2D java array of type T
+ * Grid is a facade for a generic 2D array of type T
  *
  * @param <T>
  */
 class Grid<T> {
 
     private T[][] grid;
-    private Class<T> cls;
+    //private Class<T> cls;
 
     @SuppressWarnings("unchecked")
     Grid(Class<T> cls, int rows, int cols) {
-        this.cls = cls;
+        //this.cls = cls;
         this.grid = (T[][]) Array.newInstance(cls, rows, cols);
     }
 
