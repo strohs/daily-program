@@ -29,6 +29,7 @@ public class LongestConsecutiveSequence {
         for (int n : arr) {
             //count how many integers are one greater than the current array element
             int curInt = n;
+            //count how many integers are one greater than the current array element
             while ( set.contains( curInt + 1 ) ) {
                 currLength++;
                 curInt++;
