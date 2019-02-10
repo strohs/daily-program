@@ -13,5 +13,5 @@ pom.xml
 #omit mac OS X directory files
 .DS_Store
 #intellij idea ignores
-.idea/
+
 *.iml
