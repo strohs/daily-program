@@ -21,7 +21,7 @@ public class BalancedParens {
         closedParens = parens.values();
     }
 
-    public static boolean isBalanced( String str ) {
+    private static boolean isBalanced( String str ) {
         Stack<String> stack = new Stack<>();
         for ( String s : str.split( "" ) ) {
             if ( openParens.contains( s ) ) {
@@ -39,6 +39,6 @@ public class BalancedParens {
 
     public static void main( String[] args ) {
         String instr = "abc({[f]}{})";
-        System.out.println(  isBalanced( instr ));
+        System.out.println( isBalanced(instr) );
     }
 }

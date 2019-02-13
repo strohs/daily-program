@@ -53,5 +53,5 @@ fun main() {
         ints.sortBy { digitSelector( it, digitPos ) }
     }
     // 4. ints should now be sorted
-    ints.forEach { println(" $it ") }
+    ints.take(10).forEach { println(" $it ") }
 }

@@ -4,8 +4,8 @@ package daily_program;
  * Find the subarray with the maximum sum and return the maximum sum
  * This approach will use Kadane's algorithm
  *
- * This algo only works for arrays containing at least one positive integer, arrays with all negatives will return
- * 0 as the max
+ * This algorithm only works for arrays containing at least one positive integer,
+ * arrays with all negatives will return 0 as the max
  * 
  * User: Cliff
  */
