@@ -68,8 +68,8 @@ public class ClosestPairFromTwoSortedArrays {
         // indices to the left side and right side of the merged array
         int l = 0; int r = ap.arr.length - 1;
 
-        // 2. iterate from the left side and right side of the merged array, keeping track of the closest pair
-        while (l == 0) {
+        // 2. iterate from both the left side and right side of the merged array, keeping track of the closest pair
+        while (l < r) {
             int dist = Math.abs( (ap.arr[l] + ap.arr[r]) - targetSum); // distance to the target sum
             if ( dist < diff && ap.differentSource(l,r) ) {
                 diff = dist;
@@ -84,9 +84,9 @@ public class ClosestPairFromTwoSortedArrays {
     }
 
     public static void main(String[] args) {
-        int [] xs = {1,4,5,7,30};
-        int [] ys = {1,10,20,30,40};
-        int target = 32;
+        int [] xs = {1,2,5,7};
+        int [] ys = {3,10,20,30};
+        int target = 23;
 
         IntPair res = ClosestPairFromTwoSortedArrays.findClosestPair(xs,ys,target);
         System.out.println(res);
